@@ -1,2 +1,1 @@
-console.log('Logged in ')
-console.log('Logged in ')
+console.log("Just revising few topics")
