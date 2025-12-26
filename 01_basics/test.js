@@ -116,3 +116,98 @@
 // const {coursedays : days} = course;
 // console.log(days.flat(Infinity
 // ));
+
+
+//hoisting
+//call stack
+//IIFE 
+// closures
+
+//arrow function and this keyword
+// arrow removes 'function' keyword
+
+
+// const play =()=>{
+//     console.log('playing arrow');
+// }
+// play();
+
+
+//IIFE
+
+// (
+//     () => {
+//         console.log('i am IIFE');
+//     }
+
+
+// )()
+
+
+
+// //THIS KEYWORD 
+
+// const obj = {
+//     name : 'awais ',
+//     greet: function (){
+//        console.log(`hello ${this.name} wasup`);
+//     }
+
+// }
+// obj.greet();
+
+// const obj2 = {
+//     name : 'tahir ',
+//     greet: ()=> {
+//        console.log(`hello ${this.name} wasup`);
+//     }
+
+// }
+// obj2.greet();
+
+
+//CALL STACK  JS is single threaded 
+// Global Execution Context  THIS CONTEXT
+            // Function Execution Context  This  Context
+                    // Eval execution Context
+
+// memory creation phase -- memory allocation phase - values undefined
+        //Execution phase --  value intialization 
+                // execution thread + new env variables 
+
+                //function is held with definition 
+
+
+                //lifo type
+
+
+// control flow 
+// if. else , switch , nested if else  , conditions . break , continue !, ==,===  
+// a>b? true : false
+
+
+// let a=2 ,b =3;
+
+// a>b? console.log('yes'): console.log('no');
+
+
+
+// const obj= {}
+
+// if(!obj.keys){
+//     console.log('empty');
+//     console.log(typeof obj.keys);
+// }
+// else " not empty"
+
+
+// const object1 ={
+//     user1 : ' Off-Duty '
+// }
+
+// console.log(Object.keys(object1) + '  is ' + Object.values(object1));
+
+
+
+
+//null coalesencing works b/w null n undefined
