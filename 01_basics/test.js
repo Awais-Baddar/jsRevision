@@ -105,7 +105,8 @@
 
 
 //DESTRUCTURING OF VALUES ;
-
+// object get dessctructure by flower {}
+// array get dessctructure by flower []
 //
 //   const course ={
 //     courseName: 'ssss',
