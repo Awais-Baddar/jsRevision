@@ -1,30 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Wolt Delivery Fee Clone</title>
+        <style>
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            }
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOM Revision</title>
-    <style>
-        .bg-black {
-            background-color: black;
-            color: aliceblue;
-        }
-    </style>
-</head>
+            body {
+                min-height: 100vh;
+                background-image: linear-gradient(
+                        rgba(255, 255, 255, 0.35),
+                        rgba(255, 255, 255, 0.35)
+                    ),
+                    url("https://images.unsplash.com/photo-1506812574058-fc75fa93fead?auto=format&fit=crop&w=1600&q=80");
+                background-size: cover;
+                background-position: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 40px;
+            }
 
-<body class="bg-black">
-    <div>
-        <h1 id='title' class="heading">DOM Revision <span style="display: none;">
-                adipisium aspernatur vitae enim?
-            </span>
+            .page {
+                width: min(1200px, 100%);
+            }
 
-        </h1>
-        <p>Lorem ipsum dolor sit amet consectetur Dolor porro corporis repudiandae maxime vitae. Eum recusandae atque
-            possimus laboriosam doloremque?
-        </p>
+            .hero-pill {
+                background: white;
+                border-radius: 999px;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 24px;
+                padding: 20px 40px;
+                margin: 0 auto 40px;
+                max-width: 960px;
+            }
 
-    </div>
-</body>
+            .hero-pill h1 {
+                font-size: clamp(28px, 4vw, 44px);
+                color: #0099d5;
+                font-weight: 600;
+                letter-spacing: 0.5px;
+            }
 
+            .logo {
+                width: 52px;
+                height: 52px;
+                border-radius: 50%;
+                background: #00b0e3;
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: 700;
+                font-style: italic;
+                font-size: 18px;
+            }
+
+            .content {
+                display: flex;
+                align-items: flex-start;
+                gap: 40px;
+                flex-wrap: wrap;
+            }
+
+            .card {
+                background: white;
+                border-radius: 10px;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+                padding: 24px;
+                width: min(460px, 100%);
+            }
+
+            .card h2 {
+                color: #0099d5;
+                font-size: 20px;
+                margin-bottom: 16px;
+                font-weight: 600;
+            }
+
+            .form-field {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                margin-bottom: 16px;
+            }
+
+            .form-field label {
+                font-size: 14px;
+                color: #6b6b6b;
+                font-weight: 500;
+            }
+
+            .form-field input {
+                height: 42px;
+                border-radius: 6px;
+                border: 1px solid #c8c8c8;
+                padding: 0 14px;
+                font-size: 15px;
+            }
+
+            .button {
+                width: 100%;
+                height: 44px;
+                border: none;
+                border-radius: 6px;
+                font-weight: 600;
+                letter-spacing: 0.6px;
+                cursor: pointer;
+            }
+
+            .button.primary {
+                background: #0099d5;
+                color: white;
+                margin-bottom: 12px;
+                box-shadow: 0 4px 10px rgba(0, 153, 213, 0.3);
+            }
+
+            .button.secondary {
+                background: #00a6e0;
+                color: white;
+                box-shadow: 0 4px 10px rgba(0, 166, 224, 0.3);
+            }
+
+            .credit {
+                font-size: 12px;
+                color: rgba(0, 0, 0, 0.6);
+                margin-top: 12px;
+            }
+
+            @media (max-width: 768px) {
+                body {
+                    padding: 20px;
+                }
+
+                .hero-pill {
+                    flex-direction: column;
+                    text-align: center;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <main class="page">
+            <header class="hero-pill">
+                <h1>How much it costs ?</h1>
+                <span class="logo">Wolt</span>
+            </header>
+
+            <section class="content">
+                <article class="card">
+                    <h2>Calculate Delivery Fee</h2>
+                    <form>
+                        <div class="form-field">
+                            <label for="cart-value">Cart Value</label>
+                            <input id="cart-value" type="text" placeholder="Cart Value" />
+                        </div>
+                        <div class="form-field">
+                            <label for="distance">Delivery Distance</label>
+                            <input id="distance" type="text" placeholder="Delivery Distance" />
+                        </div>
+                        <div class="form-field">
+                            <label for="items">Number of Items</label>
+                            <input id="items" type="text" placeholder="Number of Items" />
+                        </div>
+                        <div class="form-field">
+                            <label for="date">Order Date</label>
+                            <input id="date" type="date" value="2026-01-25" />
+                        </div>
+                        <button class="button primary" type="button">
+                            CALCULATE PRICE
+                        </button>
+                        <button class="button secondary" type="reset">CLEAR</button>
+                    </form>
+                    <p class="credit">credits@woltapp.com</p>
+                </article>
+            </section>
+        </main>
+    </body>
 </html>
